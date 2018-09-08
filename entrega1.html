@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>My paint</title>
+	<link rel="stylesheet" type="text/css" href="styles/styles.css">
+</head>
+<body>
+	<div class="canvas-cntnr">
+		<div class="tool-bar">
+			<span>Tools</span>
+			<span><img class="tool-icon" id="pencil" src="images/pencil.png"></span>
+			<span><img class="tool-icon" id="eraser" src="images/eraser.png"></span>
+		
+	        <label for="selWidth">Line width :</label> 
+	        <select id="selWidth">
+	            <option value="1">1</option>
+	            <option value="5">5</option>
+	            <option value="10">10</option>
+	            <option value="15">15</option>
+	            <option value="20" selected="selected">20</option>
+	            <option value="40">40</option>
+	        </select>
+	        <label for="selColor">Color :</label>
+	        <select id="selColor">
+	            <option value="black">black</option>
+	            <option value="blue" selected="selected">blue</option>
+	            <option value="red">red</option>
+	            <option value="green">green</option>
+	            <option value="yellow">yellow</option>
+	            <option value="gray">gray</option>
+	        </select>
+	        <label for="imageLoader">Elegir una imagen para empezar</label>
+	        <input type="file" id="imageLoader" name="imageLoader"/>
+			<button id="clear">Limpiar canvas</button>
+		    <a href="" id="save">Download image</a>
+	    </div>
+	    <h1>My paint</h1>
+	    
+        <canvas id="myCanvas" width="400" height="400"></canvas>
+        <aside>
+	        <h2>(3)Filtros por color</h2>
+	        <a id="negativo" href="#">Negativo</a>
+	        <a id="brillo" href="#">Brillo</a>
+	        <a id="binarizacion" href="#">Binarizacion</a>
+	        <a id="sepia" href="#">Sepia</a>
+		    <h2>(4)Otros filtros</h2>
+	        <a id="saturacion" href="#">Saturación</a>
+	        <a id="blur" href="#">Blur</a>
+	        <a id="suavizado" href="#">Suavizado</a>
+	        <a id="bordes" href="#">Detección de Bordes</a>
+	    </aside>
+	</div>
+	<script src="js/canvas.js"></script>
+	<script src="js/filters.js"></script>
+</body>
+</html>

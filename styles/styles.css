@@ -1,0 +1,13 @@
+canvas {
+	border: 1px solid black;
+}
+
+.tool-icon {
+	height: 50px;
+	width: 50px;
+}
+
+aside {
+    width: 30%;
+    float: right;
+}
