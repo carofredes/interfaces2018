@@ -9,19 +9,25 @@ canvas.addEventListener('mouseleave', stopDrawing);
 var mousePressed = false;
 var isEraser = false;
 var lastX, lastY;
-
+var actualColor = '#000000';
 var eraser = document.getElementById('eraser');
 var pencil = document.getElementById('pencil');
 
 eraser.addEventListener('click', function(){isEraser = true;});
 pencil.addEventListener('click', function(){isEraser = false;});
 
+var colors = document.querySelectorAll('.color');
+for (let i=0; i < colors.length; i++) {
+    colors[i].addEventListener('click', function(){
+        actualColor = colors[i].getAttribute('data-color');
+    });
+}
 
 function draw(x, y, isDown) {
     if (isDown) {
         context.beginPath();
         if (!isEraser) {
-        	context.strokeStyle = document.getElementById('selColor').value;
+        	context.strokeStyle = actualColor;
         } else {
         	context.strokeStyle = 'white';
         }
@@ -41,7 +47,7 @@ function onMouseDown(e) {
 	let x, y;
 	x = e.clientX - this.offsetLeft;
 	y = e.clientY - this.offsetTop;
-	draw(x,y,false);
+	draw(x, y, false);
 }
 
 function onMouseMove(e) {

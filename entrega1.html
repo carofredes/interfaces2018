@@ -6,50 +6,54 @@
 	<link rel="stylesheet" type="text/css" href="styles/styles.css">
 </head>
 <body>
-	<div class="canvas-cntnr">
-		<div class="tool-bar">
-			<span>Tools</span>
-			<span><img class="tool-icon" id="pencil" src="images/pencil.png"></span>
-			<span><img class="tool-icon" id="eraser" src="images/eraser.png"></span>
+	<h1>My paint</h1>
+	<div class="tool-bar">
+		<span><img class="tool-icon" id="pencil" src="images/pencil.png"></span>
+		<span><img class="tool-icon" id="eraser" src="images/eraser.png"></span>
 		
-	        <label for="selWidth">Line width :</label> 
-	        <select id="selWidth">
-	            <option value="1">1</option>
-	            <option value="5">5</option>
-	            <option value="10">10</option>
-	            <option value="15">15</option>
-	            <option value="20" selected="selected">20</option>
-	            <option value="40">40</option>
-	        </select>
-	        <label for="selColor">Color :</label>
-	        <select id="selColor">
-	            <option value="black">black</option>
-	            <option value="blue" selected="selected">blue</option>
-	            <option value="red">red</option>
-	            <option value="green">green</option>
-	            <option value="yellow">yellow</option>
-	            <option value="gray">gray</option>
-	        </select>
-	        <label for="imageLoader">Elegir una imagen para empezar</label>
-	        <input type="file" id="imageLoader" name="imageLoader"/>
-			<button id="clear">Limpiar canvas</button>
-		    <a href="" id="save">Download image</a>
-	    </div>
-	    <h1>My paint</h1>
-	    
-        <canvas id="myCanvas" width="400" height="400"></canvas>
-        <aside>
-	        <h2>(3)Filtros por color</h2>
-	        <a id="negativo" href="#">Negativo</a>
-	        <a id="brillo" href="#">Brillo</a>
-	        <a id="binarizacion" href="#">Binarizacion</a>
-	        <a id="sepia" href="#">Sepia</a>
-		    <h2>(4)Otros filtros</h2>
-	        <a id="saturacion" href="#">Saturación</a>
-	        <a id="blur" href="#">Blur</a>
-	        <a id="suavizado" href="#">Suavizado</a>
-	        <a id="bordes" href="#">Detección de Bordes</a>
-	    </aside>
+		<div class="line">
+			<label for="selWidth">Line width :</label> 
+			<select id="selWidth">
+				<option value="1">1</option>
+				<option value="5">5</option>
+				<option value="10">10</option>
+				<option value="15">15</option>
+				<option value="20" selected="selected">20</option>
+				<option value="40">40</option>
+			</select>
+		</div>
+		
+		<button id="clear">Limpiar canvas</button>
+	</div>
+	
+	<div class="main-container">
+		<div class="color-container">
+			<div class="color color-black" data-color="#000000"></div>
+			<div class="color color-blue" data-color="#000080"></div>
+			<div class="color color-red" data-color="#cc0000"></div>
+			<div class="color color-green" data-color="#008000"></div>
+			<div class="color color-yellow" data-color="#ffd700"></div>
+			<div class="color color-pink" data-color="#ff1493"></div>
+		</div>
+		<canvas id="myCanvas" width="400" height="400"></canvas>
+		<aside>
+			<h2>Subir imagen<input type="file" id="imageLoader" name="imageLoader"/></h2>
+			<h2 class="download-link"><a href="" id="save">Descargar imagen</a></h2>
+			<h2>(3)Filtros por color</h2>
+			<ul>
+				<li><a id="negativo" href="#">Negativo</a></li>
+				<li><a id="brillo" href="#">Brillo</a></li>
+				<li><a id="binarizacion" href="#">Binarizacion</a></li>
+				<li><a id="sepia" href="#">Sepia</a></li>
+			</ul>
+			<h2>(4)Otros filtros</h2>
+			<ul>
+				<li><a id="saturacion" href="#">Saturación</a></li>
+				<li><a id="blur" href="#">Blur</a></li>
+				<li><a id="suavizado" href="#">Suavizado</a></li>
+				<li><a id="bordes" href="#">Detección de Bordes</a></li>
+			</ul>
+		</aside>
 	</div>
 	<script src="js/canvas.js"></script>
 	<script src="js/filters.js"></script>
